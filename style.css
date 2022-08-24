@@ -1,0 +1,102 @@
+*, ::before, ::after {
+  margin: 0;
+  color: white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+  background-color: black;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav {
+  position: fixed;
+  z-index: 20;
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: black;
+  border-bottom: solid white 2px;
+  transform: translateY(-100%);
+}
+
+nav.drawer-active {
+  animation-name: draw-open;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+}
+
+nav.drawer-hidden {
+  animation-name: draw-close;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes draw-open {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes draw-close {
+  from {
+    transform: translateY(0%);
+  }
+
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+nav a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 30px;
+  padding: 10px;
+}
+
+button {
+  z-index: 100;
+  display: block;
+  position: fixed;
+  left: 92vw;
+  top: 50px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+#button-toggler {
+  width: 60px;
+  height: 50px;
+}
+
+#button-toggler > span {
+  display: block;
+  width: 100%;
+  height: 4px;
+  margin: 10px 0;
+  background-color: white;
+}
+
+#button-toggler:hover > span {
+  background-color: gray;
+}
+
+h1 {
+  z-index: 10;
+}
